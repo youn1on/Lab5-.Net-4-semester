@@ -11,13 +11,13 @@ public class SqlInjectionsHandler : BaseHandler
         foreach (var kw in _keywords)
         {
             if (form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw) ||
-                form.Surname.ToLower().Contains(kw))
+                form.Name.ToLower().Contains(kw) ||
+                form.Patronymic is not null && form.Patronymic.ToLower().Contains(kw) ||
+                form.Email.ToLower().Contains(kw) ||
+                form.PhoneNumber.ToLower().Contains(kw) ||
+                form.DeliveryType.ToLower().Contains(kw) ||
+                form.Address is not null && form.Address.ToLower().Contains(kw) ||
+                form.PostOfficeNumber is not null && form.PostOfficeNumber.ToLower().Contains(kw))
                 return _errorMessage;
         }
 
